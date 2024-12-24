@@ -54,11 +54,34 @@ Write the detailed procedure here
 **Program:**
 
 /* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+```
+//full adder module EXP_4(sum, cout, a, b, cin);
+output sum;
+output cout;
+input a;
+input b;
+input cin;
+//internal nets wire sl,cl,c2;
+//Instantiate logic gate primitives xor (sl,a,b);
+and(cl,a,b); xor(sum, sl, cin);
+and (c2, sl,cin);
+or (cout, c2,cl);
+endmodule
 
-//full adder module EXP_4(sum, cout, a, b, cin); output sum; output cout; input a; input b; input cin; //internal nets wire sl,cl,c2; //Instantiate logic gate primitives xor (sl,a,b); and(cl,a,b); xor(sum, sl, cin); and (c2, sl,cin); or (cout, c2,cl); endmodule
-
-module EXP_4_2 (df, bo, a, b, bin); output df; output bo; input a; input b; input bin; wire w1,w2,w3; assign w1=a^b; assign w2=(~a&b); assign w3=(~w1&bin); assign df=w1^bin; assign bo=w2|w3; endmodule
-
+module EXP_4_2 (df, bo, a, b, bin);
+output df;
+output bo;
+input a;
+input b;
+input bin;
+wire w1,w2,w3;
+assign w1=a^b;
+assign w2=(~a&b);
+assign w3=(~w1&bin);
+assign df=w1^bin;
+assign bo=w2|w3;
+endmodule
+```
 Developed by: RegisterNumber:24005701
 
 **RTL Schematic**
